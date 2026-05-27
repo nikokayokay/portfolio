@@ -1,0 +1,687 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Endorsements — Nikoli McSurley</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+  :root {
+    --ink:          #0d0c0b;
+    --ink-soft:     #141210;
+    --ink-muted:    #1c1a17;
+    --ink-rule:     rgba(244,240,232,0.07);
+    --paper:        #f4f0e8;
+    --paper-dim:    rgba(244,240,232,0.55);
+    --paper-mute:   rgba(244,240,232,0.28);
+    --paper-ghost:  rgba(244,240,232,0.08);
+    --gold:         #b8943a;
+    --gold-light:   #d4ab52;
+    --gold-faint:   rgba(184,148,58,0.12);
+    --linkedin:     #0a66c2;
+    --serif:        'Playfair Display', Georgia, serif;
+    --serif-body:   'Cormorant Garamond', Georgia, serif;
+    --sans:         'DM Sans', system-ui, sans-serif;
+  }
+
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--ink);
+    color: var(--paper);
+    font-family: var(--sans);
+    font-weight: 300;
+    -webkit-font-smoothing: antialiased;
+    overflow-x: hidden;
+  }
+
+  /* ── NAV ─────────────────────────────────────────────── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 3rem;
+    height: 64px;
+    background: rgba(13,12,11,0.93);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border-bottom: 1px solid var(--ink-rule);
+  }
+  .nav-logo {
+    font-family: var(--serif);
+    font-size: 1.05rem;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    color: var(--paper);
+    text-decoration: none;
+  }
+  .nav-back {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    font-size: 0.62rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(244,240,232,0.4);
+    text-decoration: none;
+    transition: color 0.2s;
+    font-weight: 400;
+  }
+  .nav-back::before { content: '←'; transition: transform 0.2s; }
+  .nav-back:hover { color: var(--gold); }
+  .nav-back:hover::before { transform: translateX(-3px); }
+
+  /* ── PAGE HEADER ─────────────────────────────────────── */
+  .page-header {
+    padding: 10rem 5rem 5rem;
+    border-bottom: 1px solid var(--ink-rule);
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 5rem;
+    align-items: end;
+    position: relative;
+    overflow: hidden;
+  }
+  .page-header::before {
+    content: '"';
+    position: absolute;
+    bottom: -3rem;
+    right: 3rem;
+    font-family: var(--serif);
+    font-size: 22rem;
+    font-weight: 700;
+    color: rgba(244,240,232,0.018);
+    pointer-events: none;
+    line-height: 1;
+  }
+  .index-num {
+    font-family: var(--serif);
+    font-size: 5.5rem;
+    font-weight: 400;
+    font-style: italic;
+    color: rgba(244,240,232,0.06);
+    line-height: 1;
+    margin-bottom: 1.2rem;
+  }
+  .index-label {
+    font-size: 0.58rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: var(--gold);
+    font-weight: 400;
+  }
+  .page-section-tag {
+    font-size: 0.58rem;
+    letter-spacing: 0.28em;
+    text-transform: uppercase;
+    color: var(--paper-mute);
+    font-weight: 400;
+    margin-bottom: 1.2rem;
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+  }
+  .page-section-tag::before {
+    content: '';
+    display: inline-block;
+    width: 22px; height: 1px;
+    background: var(--paper-mute);
+  }
+  .page-title {
+    font-family: var(--serif);
+    font-size: clamp(2.6rem, 4.5vw, 4rem);
+    font-weight: 700;
+    line-height: 0.95;
+    letter-spacing: -0.025em;
+    color: var(--paper);
+    margin-bottom: 1.5rem;
+  }
+  .page-subtitle {
+    font-family: var(--serif-body);
+    font-size: 1rem;
+    line-height: 1.9;
+    color: var(--paper-mute);
+    font-weight: 300;
+    font-style: italic;
+    max-width: 480px;
+  }
+
+  /* ── BODY GRID ───────────────────────────────────────── */
+  .page-body {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+  }
+
+  /* ── SIDEBAR ─────────────────────────────────────────── */
+  .sidebar {
+    border-right: 1px solid var(--ink-rule);
+    padding: 4rem 2.5rem;
+    position: sticky;
+    top: 64px;
+    height: calc(100vh - 64px);
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+  }
+  .sidebar-section { margin-bottom: 2.5rem; }
+  .sidebar-label {
+    font-size: 0.53rem;
+    letter-spacing: 0.3em;
+    text-transform: uppercase;
+    color: rgba(244,240,232,0.18);
+    font-weight: 500;
+    margin-bottom: 0.9rem;
+    padding-bottom: 0.6rem;
+    border-bottom: 1px solid var(--ink-rule);
+  }
+  .sidebar-stat {
+    display: flex;
+    flex-direction: column;
+    gap: 0.15rem;
+    padding: 0.85rem 0;
+    border-bottom: 1px solid rgba(244,240,232,0.04);
+  }
+  .stat-num {
+    font-family: var(--serif);
+    font-size: 1.7rem;
+    font-weight: 600;
+    color: var(--paper);
+    line-height: 1;
+    letter-spacing: -0.02em;
+  }
+  .stat-label {
+    font-size: 0.56rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--paper-mute);
+    font-weight: 400;
+  }
+  .sidebar-note {
+    font-family: var(--serif-body);
+    font-size: 0.88rem;
+    line-height: 1.75;
+    color: rgba(244,240,232,0.2);
+    font-style: italic;
+    font-weight: 300;
+    padding-top: 0.5rem;
+  }
+  .context-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1rem;
+    border: 1px solid var(--ink-rule);
+    margin-top: 1.5rem;
+    font-size: 0.56rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(244,240,232,0.2);
+    font-family: var(--sans);
+    font-weight: 400;
+    cursor: default;
+  }
+
+  /* ── MAIN ────────────────────────────────────────────── */
+  .endorsements-main {
+    padding: 5rem;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    background: rgba(244,240,232,0.025);
+  }
+
+  /* ── ENDORSEMENT CARD ────────────────────────────────── */
+  .endorsement-card {
+    background: var(--ink-soft);
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    position: relative;
+    overflow: hidden;
+    transition: background 0.3s;
+  }
+  .endorsement-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 1px;
+    background: linear-gradient(to right, var(--gold), transparent 60%);
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+  .endorsement-card:hover { background: var(--ink-muted); }
+  .endorsement-card:hover::before { opacity: 1; }
+
+  /* Left panel: endorser identity */
+  .card-identity {
+    padding: 3rem 2.5rem;
+    border-right: 1px solid var(--ink-rule);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  .endorser-index {
+    font-family: var(--serif);
+    font-size: 3.5rem;
+    font-weight: 400;
+    font-style: italic;
+    color: rgba(244,240,232,0.05);
+    line-height: 1;
+    margin-bottom: 1.5rem;
+    position: absolute;
+    top: 2rem; right: 2rem;
+  }
+
+  .endorser-name {
+    font-family: var(--serif);
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--paper);
+    line-height: 1.2;
+    letter-spacing: -0.01em;
+    margin-bottom: 0.5rem;
+  }
+  .endorser-affiliation {
+    font-family: var(--serif-body);
+    font-size: 0.88rem;
+    font-style: italic;
+    color: var(--paper-mute);
+    font-weight: 300;
+    line-height: 1.5;
+    margin-bottom: 0.3rem;
+  }
+  .endorser-class {
+    font-size: 0.58rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(244,240,232,0.2);
+    font-weight: 400;
+    margin-bottom: 1.8rem;
+  }
+
+  .card-meta-bottom {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+  }
+
+  .linkedin-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    text-decoration: none;
+    padding: 0.5rem 0.9rem;
+    border: 1px solid rgba(244,240,232,0.1);
+    font-size: 0.58rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(244,240,232,0.35);
+    font-family: var(--sans);
+    font-weight: 500;
+    transition: color 0.2s, border-color 0.2s, background 0.2s;
+    width: fit-content;
+  }
+  .linkedin-link:hover {
+    color: #fff;
+    border-color: #0a66c2;
+    background: rgba(10,102,194,0.12);
+  }
+  .linkedin-icon {
+    width: 13px; height: 13px;
+    flex-shrink: 0;
+    fill: currentColor;
+  }
+
+  .project-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    text-decoration: none;
+    font-size: 0.56rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(244,240,232,0.18);
+    font-family: var(--sans);
+    font-weight: 400;
+    transition: color 0.2s;
+  }
+  .project-link:hover { color: var(--gold); }
+  .project-link::before {
+    content: '↗';
+    font-size: 0.7rem;
+  }
+
+  /* Right panel: quote */
+  .card-quote {
+    padding: 3rem 3.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+  }
+
+  .quote-mark {
+    font-family: var(--serif);
+    font-size: 5rem;
+    font-weight: 700;
+    color: rgba(244,240,232,0.04);
+    line-height: 0.7;
+    position: absolute;
+    top: 2.2rem;
+    left: 3rem;
+    pointer-events: none;
+    user-select: none;
+  }
+
+  .quote-body {
+    font-family: var(--serif-body);
+    font-size: 1.08rem;
+    line-height: 1.9;
+    color: rgba(244,240,232,0.65);
+    font-weight: 300;
+    font-style: italic;
+    padding-top: 1.8rem;
+    position: relative;
+    z-index: 1;
+  }
+  .quote-body p + p { margin-top: 1.1em; }
+
+  .quote-context {
+    margin-top: 2rem;
+    padding-top: 1.2rem;
+    border-top: 1px solid var(--ink-rule);
+    font-size: 0.58rem;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+    color: rgba(244,240,232,0.18);
+    font-family: var(--sans);
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+  }
+  .quote-context::before {
+    content: '';
+    display: inline-block;
+    width: 16px; height: 1px;
+    background: rgba(244,240,232,0.12);
+  }
+
+  /* ── CLOSING STRIP ───────────────────────────────────── */
+  .closing-strip {
+    background: var(--ink-soft);
+    border-top: 1px solid var(--ink-rule);
+    padding: 3.5rem 5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 3rem;
+  }
+  .closing-text {
+    font-family: var(--serif-body);
+    font-size: 1rem;
+    font-style: italic;
+    color: rgba(244,240,232,0.22);
+    font-weight: 300;
+    max-width: 480px;
+    line-height: 1.75;
+  }
+  .closing-cta {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.7rem;
+    text-decoration: none;
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: rgba(244,240,232,0.3);
+    border: 1px solid rgba(244,240,232,0.1);
+    padding: 0.75rem 1.6rem;
+    font-family: var(--sans);
+    font-weight: 500;
+    transition: color 0.2s, border-color 0.2s;
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+  .closing-cta::after { content: '→'; transition: transform 0.2s; }
+  .closing-cta:hover { color: var(--gold); border-color: var(--gold); }
+  .closing-cta:hover::after { transform: translateX(4px); }
+
+  /* ── REVEAL ──────────────────────────────────────────── */
+  .reveal {
+    opacity: 0;
+    transform: translateY(18px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+  }
+  .reveal.visible { opacity: 1; transform: translateY(0); }
+  .reveal-delay-1 { transition-delay: 0.12s; }
+  .reveal-delay-2 { transition-delay: 0.24s; }
+
+  /* ── FOOTER ──────────────────────────────────────────── */
+  footer {
+    padding: 3rem 5rem;
+    background: var(--ink);
+    border-top: 1px solid var(--ink-rule);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  .footer-name {
+    font-family: var(--serif);
+    font-size: 0.88rem;
+    font-weight: 500;
+    color: rgba(244,240,232,0.22);
+    letter-spacing: 0.05em;
+  }
+  .footer-note {
+    font-size: 0.56rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(244,240,232,0.13);
+  }
+
+  /* ── RESPONSIVE ──────────────────────────────────────── */
+  @media (max-width: 900px) {
+    .page-header { grid-template-columns: 1fr; gap: 2rem; padding: 9rem 2rem 3rem; }
+    .page-body { grid-template-columns: 1fr; }
+    .sidebar {
+      position: static; height: auto;
+      border-right: none; border-bottom: 1px solid var(--ink-rule);
+      padding: 2.5rem 2rem; flex-direction: row; flex-wrap: wrap; gap: 1.5rem;
+    }
+    .sidebar-section { margin-bottom: 0; min-width: 140px; }
+    .endorsements-main { padding: 2rem; }
+    .endorsement-card { grid-template-columns: 1fr; }
+    .card-identity {
+      border-right: none; border-bottom: 1px solid var(--ink-rule);
+      padding: 2rem;
+    }
+    .card-quote { padding: 2rem; }
+    .closing-strip { flex-direction: column; align-items: flex-start; padding: 2.5rem 2rem; }
+    footer { padding: 2rem; flex-direction: column; gap: 0.8rem; text-align: center; }
+    nav { padding: 0 1.5rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo">N.M.</a>
+  <a href="contact.html" style="font-size:0.58rem;letter-spacing:0.18em;text-transform:uppercase;color:rgba(244,240,232,0.3);text-decoration:none;transition:color 0.2s;font-weight:400;" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='rgba(244,240,232,0.3)'">Contact</a>
+    <a href="index.html" class="nav-back">Portfolio</a>
+</nav>
+
+<!-- PAGE HEADER -->
+<header class="page-header reveal">
+  <div>
+    <div class="index-num">03</div>
+    <div class="index-label">Portfolio Section</div>
+  </div>
+  <div>
+    <p class="page-section-tag">Nikoli McSurley &nbsp;&middot;&nbsp; Crown Point, Indiana</p>
+    <h1 class="page-title">Endorse&shy;ments</h1>
+    <p class="page-subtitle">
+      Professional assessments from collaborators across media production,
+      community management, and project operations.
+    </p>
+  </div>
+</header>
+
+<!-- BODY -->
+<div class="page-body">
+
+  <!-- SIDEBAR -->
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-label">Record</div>
+      <div class="sidebar-stat">
+        <span class="stat-num">3</span>
+        <span class="stat-label">Endorsements</span>
+      </div>
+      <div class="sidebar-stat">
+        <span class="stat-num">2</span>
+        <span class="stat-label">Active Projects</span>
+      </div>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Contexts</div>
+      <div class="sidebar-stat">
+        <span class="stat-num" style="font-size:0.85rem;color:var(--paper-mute);">Media Production</span>
+      </div>
+      <div class="sidebar-stat">
+        <span class="stat-num" style="font-size:0.85rem;color:var(--paper-mute);">Community Management</span>
+      </div>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Note</div>
+      <p class="sidebar-note">
+        All endorsements are unsolicited professional assessments provided via LinkedIn.
+      </p>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="endorsements-main">
+
+    <!-- CARD 1: Farhaan Sultan -->
+    <article class="endorsement-card reveal">
+      <div class="card-identity">
+        <span class="endorser-index">01</span>
+        <div>
+          <h2 class="endorser-name">Farhaan Sultan</h2>
+          <p class="endorser-affiliation">University of Maryland<br>Robert H. Smith School of Business</p>
+          <p class="endorser-class">Class of 2028</p>
+        </div>
+        <div class="card-meta-bottom">
+          <a href="https://www.linkedin.com/in/farhaansultan/" target="_blank" rel="noopener" class="linkedin-link">
+            <svg class="linkedin-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+            LinkedIn Profile
+          </a>
+        </div>
+      </div>
+      <div class="card-quote">
+        <span class="quote-mark">&ldquo;</span>
+        <div class="quote-body">
+          <p>I've had the opportunity to work with Nikoli on multiple cases and projects, and he has always been extremely cooperative, reliable, and easy to work with. He does a great job when it comes to assessing situations, communicating clearly, and making sure things get done efficiently.</p>
+          <p>I've also worked alongside him using Adobe products, where he consistently showed strong attention to detail and a willingness to help others. He's the type of person who contributes positively to any team environment and is always dependable when responsibilities need to be handled.</p>
+        </div>
+        <div class="quote-context">Media Production &nbsp;&middot;&nbsp; Adobe Creative Suite &nbsp;&middot;&nbsp; Collaborative Projects</div>
+      </div>
+    </article>
+
+    <!-- CARD 2: Roy "Crim" Gonzalez -->
+    <article class="endorsement-card reveal reveal-delay-1">
+      <div class="card-identity">
+        <span class="endorser-index">02</span>
+        <div>
+          <h2 class="endorser-name">Roy &ldquo;Crim&rdquo; Gonzalez</h2>
+          <p class="endorser-affiliation">Western Connecticut State University</p>
+          <p class="endorser-class">Class of 2027</p>
+        </div>
+        <div class="card-meta-bottom">
+          <a href="https://www.linkedin.com/in/gonz4lez-gonzalez-182a52398/" target="_blank" rel="noopener" class="linkedin-link">
+            <svg class="linkedin-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+            LinkedIn Profile
+          </a>
+          <a href="https://discord.gg/nBXH4QgKaE" target="_blank" rel="noopener" class="project-link">
+            Autoshow &mdash; ROBLOX
+          </a>
+        </div>
+      </div>
+      <div class="card-quote">
+        <span class="quote-mark">&ldquo;</span>
+        <div class="quote-body">
+          <p>My team was looking for management work for our highly-anticipated startup. My team chose to work with Nikoli after noticing his efforts on separate occasions. He assisted in managing our rapidly growing community.</p>
+          <p>Nikoli is outspoken and not afraid to ask when in doubt and quick to inform about incidents or complaints. Throughout my experience of working with Nikoli, he has been trustworthy, passionate, informed, swift and hard-working. Nikoli has a desire to help whoever he&rsquo;s able to help and will only get better at helping people.</p>
+        </div>
+        <div class="quote-context">Community Management &nbsp;&middot;&nbsp; ROBLOX &mdash; Autoshow &nbsp;&middot;&nbsp; Startup Operations</div>
+      </div>
+    </article>
+
+    <!-- CARD 3: Brandon Boling -->
+    <article class="endorsement-card reveal reveal-delay-2">
+      <div class="card-identity">
+        <span class="endorser-index">03</span>
+        <div>
+          <h2 class="endorser-name">Brandon Boling</h2>
+          <p class="endorser-affiliation">Indiana University Bloomington</p>
+          <p class="endorser-class">Class of 2030</p>
+        </div>
+        <div class="card-meta-bottom">
+          <a href="https://www.linkedin.com/in/brandon-boling-289252395/" target="_blank" rel="noopener" class="linkedin-link">
+            <svg class="linkedin-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+            </svg>
+            LinkedIn Profile
+          </a>
+        </div>
+      </div>
+      <div class="card-quote">
+        <span class="quote-mark">&ldquo;</span>
+        <div class="quote-body">
+          <p>Nikoli McSurley is a hardworking and creative individual who approaches his responsibilities with consistency and focus. He takes initiative when needed, contributes thoughtful ideas, and follows through on tasks without needing close supervision.</p>
+          <p>In group settings, he collaborates effectively, communicates clearly, and supports others in a way that improves overall team performance. His reliability and willingness to engage make him a constructive presence in any collaborative environment.</p>
+        </div>
+        <div class="quote-context">Collaboration &nbsp;&middot;&nbsp; CPTV &nbsp;&middot;&nbsp; Crown Town Media</div>
+      </div>
+    </article>
+
+  </main>
+</div>
+
+<!-- CLOSING STRIP -->
+<div class="closing-strip reveal">
+  <p class="closing-text">
+    Additional professional references available upon request. All endorsements are independently authored and sourced from LinkedIn.
+  </p>
+  <a href="index.html" class="closing-cta">Return to Portfolio</a>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p class="footer-name">Nikoli McSurley</p>
+  <p class="footer-note">Endorsements &nbsp;&middot;&nbsp; Crown Point, Indiana &nbsp;&middot;&nbsp; Class of 2026</p>
+</footer>
+
+<script>
+  const obs = new IntersectionObserver(
+    entries => entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); }),
+    { threshold: 0.06 }
+  );
+  document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+</script>
+</body>
+</html>
